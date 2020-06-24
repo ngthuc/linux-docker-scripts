@@ -17,6 +17,19 @@ service docker restart
 docker login <registry.example.com>
 ```
 
+* Install docker
+```shell
+sudo apt-get install -y git curl wget
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker $USER
+
+docker -v
+```
+
 ## Windows SubSystem for Linux - Ubuntu 18.04
 * Setup WSL to use docker in Windows 10
 ```shell
