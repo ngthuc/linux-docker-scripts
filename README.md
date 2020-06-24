@@ -8,11 +8,7 @@ sudo apt-get install -y git curl wget make apt-transport-https ca-certificates c
 ```shell
 sudo mkdir /usr/local/share/ca-certificates/docker-dev-cert
 cd /usr/local/share/ca-certificates/docker-dev-cert
-nano devdockerCA.crt
-
------BEGIN CERTIFICATE-----
-INPUT CERTIFICATE HERE, SAVE AND EXIT
------END CERTIFICATE-----
+nano <certificate-name>.crt
 
 update-ca-certificates
 systemctl daemon-reload
