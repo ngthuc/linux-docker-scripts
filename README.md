@@ -1,7 +1,9 @@
 # Linux and Docker Scripts
 
 ## Package Used
+```shell
 sudo apt-get install -y git curl wget make apt-transport-https ca-certificates curl software-properties-common
+```
 
 ## Linux
 * Install docker private certificate and login to private docker registry
