@@ -9,11 +9,15 @@ sudo apt-get install -y git curl wget make apt-transport-https ca-certificates c
 * Install docker private certificate and login to private docker registry
 ```shell
 sudo mkdir /usr/local/share/ca-certificates/docker-dev-cert
+
 cd /usr/local/share/ca-certificates/docker-dev-cert
+
 nano <certificate-name>.crt
 
 update-ca-certificates
+
 systemctl daemon-reload
+
 service docker restart
 
 docker login <registry.example.com>
