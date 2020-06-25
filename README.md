@@ -1,12 +1,14 @@
 # Linux and Docker Scripts
 
 ## Package Used
+
 ```shell
 sudo apt-get install -y git curl wget make apt-transport-https ca-certificates curl software-properties-common
 ```
 
 ## Linux
 * Install docker private certificate and login to private docker registry
+
 ```shell
 sudo mkdir /usr/local/share/ca-certificates/docker-dev-cert
 
@@ -24,6 +26,7 @@ docker login <registry.example.com>
 ```
 
 * Install docker
+
 ```shell
 sudo apt-get install -y git curl wget
 
@@ -38,6 +41,7 @@ docker -v
 
 ## Windows SubSystem for Linux - Ubuntu 18.04
 * Setup WSL to use docker in Windows 10
+
 ```shell
 sudo apt-get update
 
@@ -62,16 +66,19 @@ sudo gpasswd -a $USER docker
 
 ## Docker
 * Push image to docker registry
+
 ```shell
 docker push <image-name>:<tag>
 ```
 
 * Run background
+
 ```shell
 docker run -d -it <image-name>:<tag>
 ```
 
 * Run and build arguments
+
 ```shell
 docker build -t <image-name>:<tag> --build-arg <argument-key>=<argument-value> .
 
@@ -84,17 +91,20 @@ RUN echo "Oh dang look at that $<argument-key>"
 # or with ${<argument-key>}
 ```
 
-* Executive in container: 
+* Executive in container
+
 ```shell
 docker exec -it <container-ID> bash
 ```
 
 * Remove images intelligent (^^^)
+
 ```shell
 docker rmi $(docker images | grep <anything-you-want-search> | awk '{print $3}')
 ```
 
 * Remove container intelligent
+
 ```shell
 docker rm -f $(docker ps -a | grep <anything-you-want-search> | awk '{print $1}')
 ```
